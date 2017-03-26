@@ -1,8 +1,9 @@
 {
-  "name": "nopm",
+  "name": "burrito",
   "version": "1.0.0",
   "description": "A tool that publishes NPM like packages as tar balls on S3",
   "main": "index.js",
+  "bin": "./bin/burrito",
   "scripts": {
     "start": "node index.js"
   },
@@ -14,6 +15,8 @@
   "dependencies": {
     "tar-pack": "~3.4.0",
     "fstream-npm": "~1.2.0",
-    "columnify": "~1.5.4"
+    "columnify": "~1.5.4",
+    "aws-sdk": "~2.32.0",
+    "string": "~3.3.3"
   }
 }
