@@ -1,0 +1,3 @@
+*.tgz
+.config
+node_modules
