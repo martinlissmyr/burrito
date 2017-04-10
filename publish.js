@@ -1,5 +1,6 @@
 "use strict";
 
+const os = require("os");
 const fStream = require("fstream-npm");
 const tarPack = require("tar-pack").pack;
 const writeStream = require("fs").createWriteStream;
@@ -10,7 +11,6 @@ const deleteFile = require("fs").unlinkSync;
 const AWS = require("aws-sdk");
 const path = require("path");
 const config = require("./config");
-const fs = require("fs");
 const string = require("string");
 
 function slugify(str) {
@@ -24,7 +24,7 @@ function pack() {
 
     if (exists(folder + "/package.json")) {
       pkg = JSON.parse(read(folder + "/package.json"));
-      filePath = folder + "/" + slugify(pkg.name) + "-" + pkg.version.replace("+", "-") + ".tgz";
+      filePath = path.join(os.tmpdir(), slugify(pkg.name) + "-" + pkg.version.replace("+", "-") + ".tgz");
       p = tarPack(fStream(folder));
 
       p.pipe(writeStream(filePath));
