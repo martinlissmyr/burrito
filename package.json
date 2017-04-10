@@ -1,6 +1,6 @@
 {
   "name": "burrito",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A tool that publishes NPM like packages as tar balls on S3",
   "main": "index.js",
   "bin": "./bin/burrito",
